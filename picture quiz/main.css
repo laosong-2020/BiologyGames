@@ -24,9 +24,9 @@ body {
 
 #nextQuestion {
   margin: auto;
-  width: 700px;
+  width: 800px;
   height: 400px;
-  right: -700px;
+  right: -800px;
   position: absolute;
 }
 
