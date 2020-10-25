@@ -7,9 +7,11 @@ let noOfQuestions;
 
 //header letting user know what question they're on, how many questions are left, and how many they've gotten right
 function handleQuizStatus() {
-  $(".currQuizStatus")
-    .html(`<p class="status"><span>Question: </span>${questionNumber} out of ${noOfQuestions}</p>
-    <p class="status"><span>Score: </span>${score} out of ${noOfQuestions}</p>`);
+  $(".currQuizStatus").html(
+    `<p class="status"><span>Question: </span>${
+      questionNumber + 1
+    } out of ${noOfQuestions}<br><span>Score: </span>${score} out of ${noOfQuestions}</p>`
+  );
 }
 
 function displayQuestion(questionBank) {
