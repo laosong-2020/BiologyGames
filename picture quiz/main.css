@@ -6,6 +6,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.currQuizStatus {
+  width: 400px;
+  margin: auto;
+  text-align: center;
+  color: rgb(20, 1, 1);
+  background-color: #96bfe7;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 100px;
+}
+
 #navContent {
   margin: auto;
   width: 800px;
@@ -22,12 +33,20 @@ body {
   position: absolute;
 }
 
+.quizOptions {
+  margin-left: 60px;
+}
+
 #nextQuestion {
   margin: auto;
   width: 800px;
   height: 400px;
   right: -800px;
   position: absolute;
+}
+
+header {
+  padding: 10px 10px 0px 10px;
 }
 
 .options {
@@ -61,7 +80,11 @@ body {
 }
 
 .spacer {
-  height: 100px;
+  height: 20px;
+}
+
+.spacer2 {
+  height: 30px;
 }
 
 .feedback1 {
@@ -109,4 +132,6 @@ body {
 
 #questionText {
   font-size: 35px;
+  text-align: center;
+  margin: auto;
 }

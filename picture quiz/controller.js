@@ -7,7 +7,7 @@ let noOfQuestions;
 
 //header letting user know what question they're on, how many questions are left, and how many they've gotten right
 function handleQuizStatus() {
-  $("#quiz-status")
+  $(".currQuizStatus")
     .html(`<p class="status"><span>Question: </span>${questionNumber} out of ${noOfQuestions}</p>
     <p class="status"><span>Score: </span>${score} out of ${noOfQuestions}</p>`);
 }
@@ -25,7 +25,7 @@ function displayQuestion(questionBank) {
   $(stage).append(
     '<div  class="question" id ="questionText">' +
       questionBank[questionNumber].question +
-      "</div><div id=" +
+      '</div> <div  class="quizOptions"><div id=' +
       q1 +
       ' class="options" ><img src="img/' +
       q1 +
@@ -42,7 +42,7 @@ function displayQuestion(questionBank) {
       ' class="options" ><img src="img/' +
       q3 +
       ".jpg" +
-      '"width="180px" height="180px"></div>'
+      '"width="180px" height="180px"></div></div>'
   );
 
   $("#myButton").click(function () {
