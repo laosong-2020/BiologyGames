@@ -3,10 +3,19 @@ var stage = "#currQuestion";
 var stage2 = new Object();
 var questionLock = false;
 var score = 0;
+let noOfQuestions;
+
+//header letting user know what question they're on, how many questions are left, and how many they've gotten right
+function handleQuizStatus() {
+  $("#quiz-status")
+    .html(`<p class="status"><span>Question: </span>${questionNumber} out of ${noOfQuestions}</p>
+    <p class="status"><span>Score: </span>${score} out of ${noOfQuestions}</p>`);
+}
 
 function displayQuestion(questionBank) {
   firstClick = true;
-  let noOfQuestions = questionBank.length;
+  noOfQuestions = questionBank.length;
+  handleQuizStatus();
   shuffleArray(questionBank[questionNumber]);
 
   q1 = questionBank[questionNumber].options[0];
@@ -75,6 +84,7 @@ function displayQuestion(questionBank) {
 }
 
 function changeQuestion(noOfQuestions, questionBank) {
+  handleQuizStatus();
   questionNumber++;
 
   if (stage == "#currQuestion") {
@@ -95,6 +105,7 @@ function changeQuestion(noOfQuestions, questionBank) {
     $(stage2).css("right", "-800px");
     $(stage2).empty();
   });
+
   $(stage).animate({ right: "+=800px" }, "slow", function () {
     questionLock = false;
   });

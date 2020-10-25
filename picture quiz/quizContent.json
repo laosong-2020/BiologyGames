@@ -11,7 +11,7 @@
 	},
 	{
 	"question":"Q: Which one of these is spinal cords?",
-	"options":["spinal_cord","heart", "brain"],
+	"options":["spinal_cord","eardrum", "liver"],
 	"answer":"spinal_cord"
 	}
 ]
