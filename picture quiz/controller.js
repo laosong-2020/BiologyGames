@@ -58,16 +58,20 @@ function displayQuestion(questionBank) {
       firstClick = false;
       questionLock = true;
 
-      $("#" + this.id + ".options").addClass("highlight");
+      console.log("you clicked: " + this.id);
 
       //correct answer
       if (this.id == questionBank[questionNumber].answer) {
+        $("#" + this.id + ".options").addClass("right");
         $(stage).append('<div class="feedback1">CORRECT</div>');
         score++;
       }
       //wrong answer
       if (this.id != questionBank[questionNumber].answer) {
-        $(stage).append('<div class="feedback2">WRONG</div>');
+        $("#" + this.id + ".options").addClass("wrong");
+        $(stage).append(
+          `<div class="feedback2">That was the ${this.id}.</div>`
+        );
       }
 
       console.log(questionBank[questionNumber].answer);

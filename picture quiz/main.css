@@ -63,12 +63,16 @@ header {
   cursor: pointer;
 }
 
-.highlight {
-  border: rgb(43, 231, 168) solid 5px;
+.right {
+  border: #009900 solid 5px;
+}
+
+.wrong {
+  border: #e3230b solid 5px;
 }
 
 .options:hover {
-  border: rgb(255, 101, 0) solid 5px;
+  border: #fafa09 solid 5px;
 }
 
 #banner {
@@ -105,7 +109,8 @@ header {
 }
 
 .feedback2 {
-  width: 150px;
+  margin-left: 50px;
+  width: auto;
   padding: 5px;
   font-size: 30px;
   color: white;
@@ -126,7 +131,7 @@ header {
   text-align: center;
   position: absolute;
   top: 300px;
-  right: 120px;
+  right: 50px;
   border-radius: 100px;
 }
 
