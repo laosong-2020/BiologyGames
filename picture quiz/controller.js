@@ -134,6 +134,7 @@ function changeQuestion(noOfQuestions, questionBank) {
 } //change question
 
 function quizEnd(noOfQuestions) {
+  $(".currQuizStatus").remove();
   $(stage).append(
     '<div class="Quiz end" id ="questionText">You have reached the end of the quiz !!!!!<br><br>Questions encountered: ' +
       noOfQuestions +

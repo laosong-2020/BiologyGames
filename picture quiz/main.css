@@ -17,11 +17,6 @@ body {
   border-radius: 20px;
 }
 
-#currQuizStatusText {
-  padding-top: 0.5px;
-  padding-bottom: 0.5px;
-}
-
 #navContent {
   margin: auto;
   width: 800px;
