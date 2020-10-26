@@ -107,9 +107,7 @@ function displayQuestion(questionBank) {
       if (chances == 2) {
         addNextButton(noOfQuestions, questionBank);
       } else {
-        $("#chancesModal .modal-body").append(
-          "You have one more chance left !!"
-        );
+        $("#chancesModal .modal-body").html("You have one more chance left !!");
         $("#chancesModal").modal("show");
       }
     } else {
