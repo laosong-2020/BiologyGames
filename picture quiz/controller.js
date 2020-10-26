@@ -4,6 +4,7 @@ var stage2 = new Object();
 var questionLock = false;
 var score = 0;
 let noOfQuestions;
+let chances = 0;
 
 //header letting user know what question they're on, how many questions are left, and how many they've gotten right
 function handleQuizStatus() {
@@ -15,7 +16,7 @@ function handleQuizStatus() {
 }
 
 function displayQuestion(questionBank) {
-  firstClick = true;
+  chances = 0;
   noOfQuestions = questionBank.length;
   handleQuizStatus();
   shuffleArray(questionBank[questionNumber]);
@@ -46,17 +47,12 @@ function displayQuestion(questionBank) {
       ".jpg" +
       '"width="180px" height="180px"></div></div>'
   );
-
-  $("#myButton").click(function () {
-    var test = $("<button>Test</button>").click(function () {
-      alert("hi");
-    });
-  });
+  $(stage).append('<div id="feedback"></div>');
 
   $(".options").click(function () {
-    if (questionLock == false && firstClick) {
-      firstClick = false;
-      questionLock = true;
+    console.log(chances);
+    if (chances < 2) {
+      chances++;
 
       console.log("you clicked: " + this.id);
 
@@ -65,26 +61,41 @@ function displayQuestion(questionBank) {
         score++;
         handleQuizStatus();
         $("#" + this.id + ".options").addClass("right");
-        $(stage).append('<div class="feedback1">CORRECT</div>');
+        $("#feedback").html('<div class="feedback1">CORRECT</div>');
+        chances = 2;
       }
+
       //wrong answer
       if (this.id != questionBank[questionNumber].answer) {
         $("#" + this.id + ".options").addClass("wrong");
-        $(stage).append(
+        $("#feedback").html(
           `<div class="feedback2">That was the ${this.id}.</div>`
         );
       }
 
+      if (chances == 2) {
+        addNextButton(noOfQuestions, questionBank);
+      } else {
+        $("#chancesModal").modal("show");
+      }
+
       console.log(questionBank[questionNumber].answer);
-      $(stage).append(
-        '<button type="button" id="next">Next Question >></button>'
-      );
-      $("#next").on("click", function () {
-        changeQuestion(noOfQuestions, questionBank);
-      });
     } else {
+      addNextButton(noOfQuestions, questionBank);
       $("#msgModal").modal("show");
     }
+  });
+}
+
+const syncWait = (ms) => {
+  const end = Date.now() + ms;
+  while (Date.now() < end) continue;
+};
+
+function addNextButton(noOfQuestions, questionBank) {
+  $(stage).append('<button type="button" id="next">Next Question >></button>');
+  $("#next").click(function () {
+    changeQuestion(noOfQuestions, questionBank);
   });
 }
 
@@ -112,7 +123,7 @@ function changeQuestion(noOfQuestions, questionBank) {
   });
 
   $(stage).animate({ right: "+=800px" }, "slow", function () {
-    questionLock = false;
+    chances = 0;
   });
 } //change question
 
