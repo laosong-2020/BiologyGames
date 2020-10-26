@@ -62,9 +62,10 @@ function displayQuestion(questionBank) {
 
       //correct answer
       if (this.id == questionBank[questionNumber].answer) {
+        score++;
+        handleQuizStatus();
         $("#" + this.id + ".options").addClass("right");
         $(stage).append('<div class="feedback1">CORRECT</div>');
-        score++;
       }
       //wrong answer
       if (this.id != questionBank[questionNumber].answer) {
@@ -82,9 +83,7 @@ function displayQuestion(questionBank) {
         changeQuestion(noOfQuestions, questionBank);
       });
     } else {
-      alert(
-        "You can't alter your answer now !!! Please proceed to the next question when you are ready."
-      );
+      $("#msgModal").modal("show");
     }
   });
 }
