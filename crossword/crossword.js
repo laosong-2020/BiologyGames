@@ -632,6 +632,93 @@ $( "#btnCheck" ).click(function() {
   }
 });
 
+
+function shuffle(array) {
+    var counter = array.length, temp, index;
+
+    // While there are elements in the array
+    while (counter--) {
+        // Pick a random index
+        index = (Math.random() * counter) | 0;
+
+        // And swap the last element with it
+        temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+
+    return array;
+}
+
+$( "#btnHintEasy" ).click(function(random) {
+
+	var items = $('.square input');
+	//console.log(items);
+	var random = shuffle(items).slice(0, 6);
+	//console.log(random);
+	//console.log(random[0]);
+	$(random).addClass("ABC");
+	
+	$( ".ABC" ).each(function() {
+	  //console.log($(this));
+      //if (!($(this).attr('data-letter') === ($(this).val().toUpperCase()))) {
+      $(this).val($(this).attr('data-letter'));
+      $(this).css({'color': 'rgb(0,200,0)'});
+      
+	});
+
+	$( "#btnHintEasy" ).attr('disabled', true);
+    $( "#btnHintEasy" ).prop('disabled', true);
+    $("#btnHintEasy").off('click');
+}
+)
+
+$( "#btnHintMedium" ).click(function(random) {
+    
+    var items = $('.square input');
+	//console.log(items);
+	var random = shuffle(items).slice(0, 10);
+	//console.log(random);
+	//console.log(random[0]);
+	$(random).addClass("ABC");
+	
+	$( ".ABC" ).each(function() {
+	  //console.log($(this));
+      //if (!($(this).attr('data-letter') === ($(this).val().toUpperCase()))) {
+      $(this).val($(this).attr('data-letter'));
+      $(this).css({'color': 'rgb(0,200,0)'});
+      
+	});
+
+	$( "#btnHintMedium" ).attr('disabled', true);
+    $( "#btnHintMedium" ).prop('disabled', true);
+    $("#btnHintMedium").off('click');
+}
+)
+
+$( "#btnHintHard" ).click(function(random) {
+    
+    var items = $('.square input');
+	//console.log(items);
+	var random = shuffle(items).slice(0, 15);
+	//console.log(random);
+	//console.log(random[0]);
+	$(random).addClass("ABC");
+	
+	$( ".ABC" ).each(function() {
+	  //console.log($(this));
+      //if (!($(this).attr('data-letter') === ($(this).val().toUpperCase()))) {
+      $(this).val($(this).attr('data-letter'));
+      $(this).css({'color': 'rgb(0,200,0)'});
+      
+	});
+
+	$( "#btnHintHard" ).attr('disabled', true);
+    $( "#btnHintHard" ).prop('disabled', true);
+    $("#btnHintHard").off('click');
+}
+)
+
 $('#btnReset').click(function() {
   location.reload();
 });
