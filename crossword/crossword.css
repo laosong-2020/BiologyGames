@@ -11,7 +11,9 @@
 .clueBlock{
   position: relative;
   margin-bottom: 5em;
+  
 }
+
 .clueDirection{
     text-align: left;
     margin: 1em 0 0.25em 122px;
@@ -69,6 +71,7 @@
   -moz-box-shadow: 0 0 0 2px rgb(0,133,180);
   box-shadow: inset 0 0 0 2px rgb(0,133,180);  
 }
+
 .char {
   font-family: sans-serif;
   font-size:24px;
@@ -115,6 +118,7 @@ border-color: rgba(0,0,0,0);
   background-color: rgb(150,150,150);
 }
 
+
 #btnCheck {
     position: absolute;
     right: 2rem;
@@ -123,6 +127,27 @@ border-color: rgba(0,0,0,0);
 }
 
 #btnReset {
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+#btnHintEasy {
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+#btnHintMedium {
+    position: absolute;
+    left: 2rem;
+    top: 1rem;
+    cursor: pointer;
+}
+
+#btnHintHard {
     position: absolute;
     left: 2rem;
     top: 1rem;
