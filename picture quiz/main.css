@@ -97,7 +97,7 @@ header {
 }
 
 .feedback1 {
-  width: 150px;
+  width: auto;
   padding: 5px;
   font-size: 30px;
   color: white;

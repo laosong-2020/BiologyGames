@@ -25,6 +25,9 @@ function displayQuestion(questionBank) {
   q2 = questionBank[questionNumber].options[1];
   q3 = questionBank[questionNumber].options[2];
 
+  imgWidth = "170px";
+  imgHeight = "170px";
+
   $(stage).append(
     '<div  class="question" id ="questionText">' +
       questionBank[questionNumber].question +
@@ -33,21 +36,22 @@ function displayQuestion(questionBank) {
       ' class="options" ><img src="img/' +
       q1 +
       ".jpg" +
-      '"width="180px" height="180px">' +
+      `"width=${imgWidth} height=${imgHeight}>` +
       "</div><div id=" +
       q2 +
       ' class="options"><img src="img/' +
       q2 +
       ".jpg" +
-      '"width="180px" height="180px">' +
+      `"width=${imgWidth} height=${imgHeight}>` +
       "</div><div id=" +
       q3 +
       ' class="options" ><img src="img/' +
       q3 +
       ".jpg" +
-      '"width="180px" height="180px"></div></div>'
+      `"width=${imgWidth} height=${imgHeight}></div></div>`
   );
   $(stage).append('<div id="feedback"></div>');
+  $(stage).append('<div id="goToNextQuestion"></div>');
 
   $(".options").click(function () {
     console.log(chances);
@@ -93,7 +97,9 @@ const syncWait = (ms) => {
 };
 
 function addNextButton(noOfQuestions, questionBank) {
-  $(stage).append('<button type="button" id="next">Next Question >></button>');
+  $("#goToNextQuestion").html(
+    '<button type="button" id="next">Next Question >></button>'
+  );
   $("#next").click(function () {
     changeQuestion(noOfQuestions, questionBank);
   });
