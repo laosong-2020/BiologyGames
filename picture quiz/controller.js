@@ -6,7 +6,33 @@ var score = 0;
 let noOfQuestions;
 let chances = 0;
 
-//header letting user know what question they're on, how many questions are left, and how many they've gotten right
+/* Entry point of the js upon DOM loading */
+$(document).ready(function () {
+  let quizQuestions = [];
+
+  //async call => load json data
+  $.getJSON("quizContent.json")
+    .then((jsonData) => {
+      quizQuestions = jsonData;
+
+      for (let question in quizQuestions) {
+        console.log(quizQuestions[question]);
+      }
+    })
+    .then(() => {
+      console.log("json data has been loaded .....");
+      console.log("Shuffle the quiz questions....");
+      shuffleArray(quizQuestions);
+      for (let question in quizQuestions) {
+        console.log(quizQuestions[question]);
+      }
+
+      console.log("The quiz will start now....");
+      displayQuestion(quizQuestions);
+    });
+});
+
+//score card
 function handleQuizStatus() {
   $(".currQuizStatus").html(
     `<p class="status"><span>Question: </span>${
@@ -15,6 +41,7 @@ function handleQuizStatus() {
   );
 }
 
+//display the question
 function displayQuestion(questionBank) {
   chances = 0;
   noOfQuestions = questionBank.length;
@@ -85,8 +112,6 @@ function displayQuestion(questionBank) {
         );
         $("#chancesModal").modal("show");
       }
-
-      console.log(questionBank[questionNumber].answer);
     } else {
       addNextButton(noOfQuestions, questionBank);
       $("#chancesModal .modal-body").html(
@@ -97,11 +122,7 @@ function displayQuestion(questionBank) {
   });
 }
 
-const syncWait = (ms) => {
-  const end = Date.now() + ms;
-  while (Date.now() < end) continue;
-};
-
+/* adds the button moving to the next question */
 function addNextButton(noOfQuestions, questionBank) {
   $("#goToNextQuestion").html(
     '<button type="button" id="next">Next Question >></button>'
@@ -111,6 +132,7 @@ function addNextButton(noOfQuestions, questionBank) {
   });
 }
 
+/* In charge of transition to the next question */
 function changeQuestion(noOfQuestions, questionBank) {
   handleQuizStatus();
   questionNumber++;
@@ -137,8 +159,9 @@ function changeQuestion(noOfQuestions, questionBank) {
   $(stage).animate({ right: "+=800px" }, "slow", function () {
     chances = 0;
   });
-} //change question
+}
 
+/* last page of the quiz */
 function quizEnd(noOfQuestions) {
   $(".currQuizStatus").remove();
   $(stage).append(
@@ -148,7 +171,7 @@ function quizEnd(noOfQuestions) {
       score +
       "</b> correct.</div>"
   );
-} //display final slide
+}
 
 /* Randomize array in-place using Durstenfeld shuffle algorithm */
 function shuffleArray(array) {
@@ -159,30 +182,3 @@ function shuffleArray(array) {
     array[j] = temp;
   }
 }
-
-$(document).ready(function () {
-  let quizQuestions = [];
-
-  //async call => load json data
-  $.getJSON("quizContent.json")
-    .then((jsonData) => {
-      quizQuestions = jsonData;
-
-      for (let question in quizQuestions) {
-        console.log(quizQuestions[question]);
-      }
-    })
-    .then(() => {
-      console.log("json data has been loaded .....");
-      console.log("Shuffle the quiz questions....");
-      shuffleArray(quizQuestions);
-      for (let question in quizQuestions) {
-        console.log(quizQuestions[question]);
-      }
-
-      console.log("The quiz will start now....");
-      displayQuestion(quizQuestions);
-    });
-});
-
-// fillDB();
