@@ -80,13 +80,19 @@ function displayQuestion(questionBank) {
       if (chances == 2) {
         addNextButton(noOfQuestions, questionBank);
       } else {
+        $("#chancesModal .modal-body").append(
+          "You have one more chance left !!"
+        );
         $("#chancesModal").modal("show");
       }
 
       console.log(questionBank[questionNumber].answer);
     } else {
       addNextButton(noOfQuestions, questionBank);
-      $("#msgModal").modal("show");
+      $("#chancesModal .modal-body").html(
+        " You can't alter your answer now !!! <br> Please proceed to the next question when you are ready."
+      );
+      $("#chancesModal").modal("show");
     }
   });
 }
