@@ -1,3 +1,7 @@
+import quizQuestions from "./quizContent.js";
+
+const imgWidth = "170px";
+const imgHeight = "170px";
 let questionNumber = 0;
 var stage = "#currQuestion";
 var stage2 = new Object();
@@ -8,28 +12,11 @@ let chances = 0;
 
 /* Entry point of the js upon DOM loading */
 $(document).ready(function () {
-  let quizQuestions = [];
-
-  //async call => load json data
-  $.getJSON("quizContent.json")
-    .then((jsonData) => {
-      quizQuestions = jsonData;
-
-      for (let question in quizQuestions) {
-        console.log(quizQuestions[question]);
-      }
-    })
-    .then(() => {
-      console.log("json data has been loaded .....");
-      console.log("Shuffle the quiz questions....");
-      shuffleArray(quizQuestions);
-      for (let question in quizQuestions) {
-        console.log(quizQuestions[question]);
-      }
-
-      console.log("The quiz will start now....");
-      displayQuestion(quizQuestions);
-    });
+  console.log("json data has been loaded .....");
+  console.log("Shuffle the quiz questions....");
+  shuffleArray(quizQuestions);
+  console.log("The quiz will start now....");
+  displayQuestion(quizQuestions);
 });
 
 //score card
@@ -48,12 +35,9 @@ function displayQuestion(questionBank) {
   handleQuizStatus();
   shuffleArray(questionBank[questionNumber]);
 
-  q1 = questionBank[questionNumber].options[0];
-  q2 = questionBank[questionNumber].options[1];
-  q3 = questionBank[questionNumber].options[2];
-
-  imgWidth = "170px";
-  imgHeight = "170px";
+  let q1 = questionBank[questionNumber].options[0];
+  let q2 = questionBank[questionNumber].options[1];
+  let q3 = questionBank[questionNumber].options[2];
 
   $(stage).append(
     '<div  class="question" id ="questionText">' +
