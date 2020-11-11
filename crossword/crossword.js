@@ -6,6 +6,10 @@ var board, wordArr, wordBank, wordsActive, boardMap,
   focusChar, focusIndex = null, mode, 
   wordElementsAcross, wordElementsDown;
 
+var countWrong = 0;
+let lives = 3;
+var count = $(".square input").length;
+
 var answers = [];
 
 var Bounds = {  
@@ -584,13 +588,18 @@ String.prototype.replaceAll = function (replaceThis, withThis) {
 Create();
 Generate();
 Play();
-
+Status();
 
 //==================================================//
-var countWrong = 0;
-var lives = 3;
-var count = $(".square input").length;
+
 //console.log(count);
+
+function Status() {
+
+  $(".status").html(
+  `<p class="status"><span>Chances left: </span>${lives}</p>`
+  );
+}
 
 $( "#btnCheck" ).click(function() {
     $( ".square input" ).each(function() {
@@ -608,10 +617,11 @@ $( "#btnCheck" ).click(function() {
   if (countWrong > 0  && lives > 0) {
     lives = lives - 1;
     if (lives > 0) {
-    alert("Try Again! You have " + lives + " attempts left");
+    Status();
     }
     else {
     alert("You lost! Better luck next time");
+    Status();
     $( ".square input" ).each(function() {
       if (!($(this).attr('data-letter') === ($(this).val().toUpperCase()))) {
       $(this).val($(this).attr('data-letter'));
