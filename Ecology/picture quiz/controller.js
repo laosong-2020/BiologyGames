@@ -1,5 +1,31 @@
-import quizQuestions from "./quizContent.js";
 
+// #####################################################################
+// set your questions and the images (including extension) here
+// Options format: [{name: "Answer key to be displayed (replace space with '_')", image: "Corresponding image name including extension (.jpg, .png etc)"]
+// Only 3 options are allowed.
+// Any number of questions can be added.
+// answer format: Same as name in one of the options.
+
+// #####################################################################
+let quizQuestions = [
+  {
+    question: "Which of these is a heterotroph?",
+		options: [{name:"heterotroph", image:"heterotroph.PNG"}, {name:"autotroph", image:"autotroph.PNG"},{name:"detrivore", image:"detrivore.PNG"}],
+    answer: "heterotroph",
+  },
+  {
+    question: "Which of these is fungi?",
+		options: [{name:"fungi", image:"fungi.PNG"}, {name:"bacteria", image:"bacteria.PNG"},{name:"detrivore", image:"detrivore.PNG"}],
+    answer: "fungi",
+  },
+  {
+    question: "Which of these is omnivore?",
+		options: [{name:"herbivore", image:"herbivore.PNG"}, {name:"omnivore", image:"omnivore.jpg"},{name:"carnivore", image:"carnivore.jpg"}],
+    answer: "omnivore",
+  },
+]
+
+// #####################################################################
 const imgWidth = "170px";
 const imgHeight = "170px";
 let questionNumber = 0;
@@ -42,24 +68,21 @@ function displayQuestion(questionBank) {
   $(stage).append(
     '<div  class="question" id ="questionText">' +
       questionBank[questionNumber].question +
-      '</div> <div  class="quizOptions"><div id=' +
-      q1 +
+      '</div> <div class = "row"><div class="quizOptions"><div id=' +
+      q1.name +
       ' class="options" ><img src="img/' +
-      q1 +
-      ".jpg" +
+      q1.image +
       `"width=${imgWidth} height=${imgHeight}>` +
-      "</div><div id=" +
-      q2 +
+      `</div><div id=`+
+      q2.name +
       ' class="options"><img src="img/' +
-      q2 +
-      ".jpg" +
+      q2.image +
       `"width=${imgWidth} height=${imgHeight}>` +
-      "</div><div id=" +
-      q3 +
+      `</div> <div id=` +
+      q3.name+
       ' class="options" ><img src="img/' +
-      q3 +
-      ".jpg" +
-      `"width=${imgWidth} height=${imgHeight}></div></div>`
+      q3.image +
+      `"width=${imgWidth} height=${imgHeight}></div></div></div>`
   );
   $(stage).append('<div id="feedback"></div>');
   $(stage).append('<div id="goToNextQuestion"></div>');
@@ -104,11 +127,19 @@ function displayQuestion(questionBank) {
   });
 }
 
+
 /* adds the button moving to the next question */
 function addNextButton(noOfQuestions, questionBank) {
-  $("#goToNextQuestion").html(
-    '<button type="button" id="next">Next Question >></button>'
-  );
+	if (questionNumber == questionBank.length - 1){
+		$("#goToNextQuestion").html(
+		  '<button type="button" id="next"> Finish Quiz >></button>'
+		);
+	}else{
+		$("#goToNextQuestion").html(
+		  '<button type="button" id="next">Next Question >></button>'
+		);
+	}
+
   $("#next").click(function () {
     changeQuestion(noOfQuestions, questionBank);
   });
