@@ -1,12 +1,13 @@
-# StressLearningGames
-# CSCE 606 - Software engineering (Fall 2020)
-## Course project by Team - SevenGers ##
+#  Biology Learning Games
+# CSCE 606 - Software engineering (Spring 2021)
+## Course project by Team - TensorFlow ##
 Team members:
-* Anushka Waingankar
-* Flavia Ratto
-* Jagadish KUMARAN Jayagopal
-* Kartik Venkataraman
-* Laxman Balaji Balasubramanian
-* Lokheshkumar Alagarsamy
-* Rishabh Singla
-## Project topic - Stress Learning Games ##
+* Lu Zhang
+* Jiateng Sun
+* Jinjin Jiang
+* Zhenlei Song
+* Zhihao Li
+* Tzu-Shen Wang
+## Project topic - Biology Learning Games ##
+* Documentation Google Drive: 
+https://drive.google.com/drive/folders/1dtixr5w24Pok7wmctcXAln0AqjfYg00w
