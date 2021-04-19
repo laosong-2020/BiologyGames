@@ -1,4 +1,4 @@
-describe("CellBiologyPicQuiz", function() {
+describe("StressPicQuiz", function() {
     beforeEach(function() {
         let quizQuestions = [
             {
