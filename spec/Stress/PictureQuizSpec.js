@@ -1,6 +1,6 @@
 describe("StressPicQuiz", function() {
     beforeEach(function() {
-        let quizQuestions = [
+        var quizQuestions = [
             {
               question: "Which of these is neuron?",
               options: [{name:"neuron", image:"neuron.PNG"}, {name:"ear", image:"ear.PNG"},{name:"rna", image:"rna.PNG"}],

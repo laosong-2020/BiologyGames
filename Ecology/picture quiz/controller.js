@@ -7,7 +7,7 @@
 // answer format: Same as name in one of the options.
 
 // #####################################################################
-let quizQuestions = [
+var quizQuestions = [
   {
     question: "Which of these is a heterotroph?",
 		options: [{name:"heterotroph", image:"heterotroph.PNG"}, {name:"autotroph", image:"autotroph.PNG"},{name:"detrivore", image:"detrivore.PNG"}],
@@ -23,18 +23,18 @@ let quizQuestions = [
 		options: [{name:"herbivore", image:"herbivore.PNG"}, {name:"omnivore", image:"omnivore.jpg"},{name:"carnivore", image:"carnivore.jpg"}],
     answer: "omnivore",
   },
-]
+];
 
 // #####################################################################
-const imgWidth = "170px";
-const imgHeight = "170px";
-let questionNumber = 0;
+var imgWidth = "170px";
+var imgHeight = "170px";
+var questionNumber = 0;
 var stage = "#currQuestion";
 var stage2 = new Object();
 var questionLock = false;
 var score = 0;
-let noOfQuestions;
-let chances = 0;
+var noOfQuestions;
+var chances = 0;
 
 /* Entry point of the js upon DOM loading */
 $(document).ready(function () {

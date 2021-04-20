@@ -7,7 +7,7 @@
 // answer format: Same as name in one of the options.
 
 // #####################################################################
-let quizQuestions = [
+var quizQuestions = [
   {
     question: "Which of these represent scientific method?",
 		options: [{name:"data_analysis", image:"data_analysis.PNG"}, {name:"scientific_method", image:"scientific_method.PNG"},{name:"scientist_chatting", image:"scientist_chatting.PNG"}],
@@ -23,18 +23,18 @@ let quizQuestions = [
 		options: [{name:"experimentation", image:"experimentation.PNG"}, {name:"research", image:"research.PNG"},{name:"data_analysis", image:"data_analysis.PNG"}],
     answer: "experimentation",
   },
-]
+];
 
 // #####################################################################
-const imgWidth = "170px";
-const imgHeight = "170px";
-let questionNumber = 0;
+var imgWidth = "170px";
+var imgHeight = "170px";
+var questionNumber = 0;
 var stage = "#currQuestion";
 var stage2 = new Object();
 var questionLock = false;
 var score = 0;
-let noOfQuestions;
-let chances = 0;
+var noOfQuestions;
+var chances = 0;
 
 /* Entry point of the js upon DOM loading */
 $(document).ready(function () {

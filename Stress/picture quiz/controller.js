@@ -7,7 +7,7 @@
 // answer format: Same as name in one of the options.
 
 // #####################################################################
-let quizQuestions = [
+var quizQuestions = [
   {
     question: "Which of these is neuron?",
     options: [{name:"neuron", image:"neuron.PNG"}, {name:"ear", image:"ear.PNG"},{name:"rna", image:"rna.PNG"}],
@@ -27,15 +27,15 @@ let quizQuestions = [
 
 
 // #####################################################################
-const imgWidth = "170px";
-const imgHeight = "170px";
-let questionNumber = 0;
+var imgWidth = "170px";
+var imgHeight = "170px";
+var questionNumber = 0;
 var stage = "#currQuestion";
 var stage2 = new Object();
 var questionLock = false;
 var score = 0;
-let noOfQuestions;
-let chances = 0;
+var noOfQuestions;
+var chances = 0;
 
 /* Entry point of the js upon DOM loading */
 $(document).ready(function () {

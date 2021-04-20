@@ -1,6 +1,6 @@
 describe("EcologyPicQuiz", function() {
     beforeEach(function() {
-        let quizQuestions = [
+        var quizQuestions = [
             {
               question: "Which of these is a heterotroph?",
               options: [{name:"heterotroph", image:"heterotroph.PNG"}, {name:"autotroph", image:"autotroph.PNG"},{name:"detrivore", image:"detrivore.PNG"}],

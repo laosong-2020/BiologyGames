@@ -7,7 +7,7 @@
 // answer format: Same as name in one of the options.
 
 // #####################################################################
-let quizQuestions = [
+var quizQuestions = [
   {
     question: "Which of these is measles?",
 		options: [{name:"measles", image:"measles.PNG"}, {name:"small pox", image:"small pox.PNG"},{name:"rubella", image:"rubella.PNG"}],
@@ -23,18 +23,18 @@ let quizQuestions = [
 		options: [{name:"tetanus", image:"tetanus.PNG"}, {name:"cracked_heel", image:"cracked heel.jpg"},{name:"plantar_warts", image:"plantar warts.jpg"}],
     answer: "tetanus",
   },
-]
+];
 
 // #####################################################################
-const imgWidth = "170px";
-const imgHeight = "170px";
-let questionNumber = 0;
+var imgWidth = "170px";
+var imgHeight = "170px";
+var questionNumber = 0;
 var stage = "#currQuestion";
 var stage2 = new Object();
 var questionLock = false;
 var score = 0;
-let noOfQuestions;
-let chances = 0;
+var noOfQuestions;
+var chances = 0;
 
 /* Entry point of the js upon DOM loading */
 $(document).ready(function () {

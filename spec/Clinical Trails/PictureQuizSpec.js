@@ -1,6 +1,6 @@
 describe("ClinicalTrialsPicQuiz", function() {
     beforeEach(function() {
-        let quizQuestions = [
+        var quizQuestions = [
             {
                 question: "Which of these represent scientific method?",
                 options: [{name:"data_analysis", image:"data_analysis.PNG"}, {name:"scientific_method", image:"scientific_method.PNG"},{name:"scientist_chatting", image:"scientist_chatting.PNG"}],

@@ -1,6 +1,6 @@
 describe("InfectiousDiseasesPicQuiz", function() {
     beforeEach(function() {
-        let quizQuestions = [
+        var quizQuestions = [
             {
               question: "Which of these is measles?",
               options: [{name:"measles", image:"measles.PNG"}, {name:"small pox", image:"small pox.PNG"},{name:"rubella", image:"rubella.PNG"}],
