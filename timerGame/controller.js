@@ -1,5 +1,4 @@
 
-
 function startGame() {
     myGamePiece = new component(30, 30, "red", 80, 75);
     myGameArea.start();
@@ -15,6 +14,22 @@ function getRandomQuestion() {
     document.getElementById('B').innerHTML = getJsonChoice(jsonItem, 1);
     document.getElementById('C').innerHTML = getJsonChoice(jsonItem, 2);
     document.getElementById('D').innerHTML = getJsonChoice(jsonItem, 3);
+    var anschoices =  $(".options");
+    btnlistener(anschoices);
+}
+
+function btnlistener(choices){
+    for (i = 0;i<choices.length;i++){
+        choices[i].addEventListener("click",function() {
+            console.log("you selected " + this.id);
+            var answer = getJsonAnswer(jsonItem);
+            if(this.innerText == answer) {
+                alert("Correct!");
+            } else {
+                alert("Wrong!");
+            }
+        })
+    }
 }
 var myGameArea = {
     canvas : document.createElement("canvas"),
@@ -94,3 +109,6 @@ function getJsonChoice(jsonObj, index) {
     var choice = jsonObj.choices[index];
     return choice;
 }
+
+
+

@@ -41,19 +41,6 @@ canvas {
     const jsonImport = data;
     var jsonItem = jsonImport[0];
     var myGamePiece;
-    $(".options").click(function() {
-    console.log("you selected " + this.id);
-    var answer = getJsonAnswer(jsonItem);
-    if(this.innerText == answer) {
-        alert("Correct!");
-    } else {
-        alert("Wrong!");
-    }})
-
-    
-    $(".ansbtn").click(function() {
-        alert("clicked");
-    })
 
 </script>
 </body>
