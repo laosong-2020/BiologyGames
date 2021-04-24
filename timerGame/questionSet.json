@@ -1,0 +1,12 @@
+data = [
+{
+    "question" : "What's your name?", 
+    "answer" : "Trump", 
+    "choices" : ["Obama", "J.Bush", "S.Bush", "Trump"]
+},
+{
+    "question" : "who is the greatest NBA player ever?",
+    "answer" : "Kobe",
+    "choices" : ["Kobe", "M.Jordan", "L.B.J", "D.Rose"]
+}
+];
