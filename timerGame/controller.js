@@ -1,3 +1,4 @@
+var usedQuestions = []; //use to store the questions that is already used
 
 function startGame() {
     myGamePiece = new component(30, 30, "red", 80, 75);
@@ -9,12 +10,17 @@ function getRandomQuestion() {
     var size = data.length;
     var randomIndex = Math.floor(Math.random() * size );
     jsonItem = jsonImport[randomIndex];
+    usedQuestions.push(randomIndex);
+    while(usedQuestions.includes(randomIndex)){ //find another random index
+        randomIndex = Math.floor(Math.random() * size );
+    }
     document.getElementById('question').innerHTML = getJsonQuestion(jsonItem);
     document.getElementById('A').innerHTML = getJsonChoice(jsonItem, 0);
     document.getElementById('B').innerHTML = getJsonChoice(jsonItem, 1);
     document.getElementById('C').innerHTML = getJsonChoice(jsonItem, 2);
     document.getElementById('D').innerHTML = getJsonChoice(jsonItem, 3);
     var anschoices =  $(".options");
+//    btnlistener(anschoices);
     btnlistener(anschoices);
 }
 
@@ -23,14 +29,16 @@ function btnlistener(choices){
         choices[i].addEventListener("click",function() {
             console.log("you selected " + this.id);
             var answer = getJsonAnswer(jsonItem);
-            if(this.innerText == answer) {
+            if(this.innerText == answer) { //显示下一个游戏
                 alert("Correct!");
-            } else {
+                getRandomQuestion();
+            } else { //结束游戏?
                 alert("Wrong!");
             }
         })
     }
 }
+
 var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {

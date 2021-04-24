@@ -9,4 +9,10 @@ data = [
     "answer" : "Kobe",
     "choices" : ["Kobe", "M.Jordan", "L.B.J", "D.Rose"]
 }
+,
+{
+    "question" : "the answer is a",
+    "answer" : "a",
+    "choices" : ["a", "b", "c", "d"]
+}
 ];
