@@ -43,16 +43,29 @@ function component(width, height, color, x, y, type) {
     this.speedY = 0;    
     this.gravity = 0.05;
     this.gravitySpeed = 0;
+    this.timeup = false;
     this.update = function() {
         ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
+
+
+    //计时器 到底会提醒
+    this.timer = function(){
+        if(this.y >= 240&&this.timeup===false){
+            alert("timeup")
+            this.timeup=true;
+
+        }
+    }
+
     this.newPos = function() {
         this.gravitySpeed += this.gravity;
         this.x += this.speedX;
         this.y += this.speedY + this.gravitySpeed;
         this.hitBottom();
+        this.timer();
     }
     this.hitBottom = function() {
         var rockbottom = myGameArea.canvas.height - this.height;
