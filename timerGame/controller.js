@@ -3,8 +3,8 @@ var usedQuestions = []; //use to store the questions that is already used
 function startGame() {
     myGamePiece = new component(30, 30, "red", 80, 75);
     myGameArea.start();
-    getRandomQuestion();
-    
+    setUpBtnListeners();
+    getRandomQuestion();   
 }
 function getRandomQuestion() {
     var size = data.length;
@@ -19,11 +19,11 @@ function getRandomQuestion() {
     document.getElementById('B').innerHTML = getJsonChoice(jsonItem, 1);
     document.getElementById('C').innerHTML = getJsonChoice(jsonItem, 2);
     document.getElementById('D').innerHTML = getJsonChoice(jsonItem, 3);
+}
+function setUpBtnListeners(){
     var anschoices =  $(".options");
-//    btnlistener(anschoices);
     btnlistener(anschoices);
 }
-
 function btnlistener(choices){
     for (i = 0;i<choices.length;i++){
         choices[i].addEventListener("click",function() {
@@ -31,6 +31,7 @@ function btnlistener(choices){
             var answer = getJsonAnswer(jsonItem);
             if(this.innerText == answer) { //显示下一个游戏
                 alert("Correct!");
+                resetGameArea();
                 getRandomQuestion();
             } else { //结束游戏?
                 alert("Wrong!");
@@ -38,6 +39,7 @@ function btnlistener(choices){
         })
     }
 }
+
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
@@ -61,7 +63,9 @@ function component(width, height, color, x, y, type) {
     this.width = width;
     this.height = height;
     this.x = x;
-    this.y = y;    
+    this.y = y; 
+    this.yOrigin=y;
+    this.xOrigin=x;   
     this.speedX = 0;
     this.speedY = 0;    
     this.gravity = 0.05;
@@ -79,7 +83,6 @@ function component(width, height, color, x, y, type) {
         if(this.y >= 240&&this.timeup===false){
             alert("timeup")
             this.timeup=true;
-
         }
     }
 
@@ -89,6 +92,10 @@ function component(width, height, color, x, y, type) {
         this.y += this.speedY + this.gravitySpeed;
         this.hitBottom();
         this.timer();
+    }
+    this.resetPos=function(){
+        this.y=this.yOrigin;
+        this.gravitySpeed=0;
     }
     this.hitBottom = function() {
         var rockbottom = myGameArea.canvas.height - this.height;
@@ -103,7 +110,11 @@ function updateGameArea() {
     myGamePiece.newPos();
     myGamePiece.update();
 }
-
+function resetGameArea(){
+    myGameArea.clear();
+    myGamePiece.resetPos();
+    myGamePiece.update();
+}
 function getJsonQuestion(jsonObj) {
     var question = jsonObj.question;
     return "Q: " + question;
