@@ -78,7 +78,7 @@ function component(width, height, color, x, y, type) {
     }
 
 
-    //计时器 到底会提醒
+    //Sends notification when time is up
     this.timer = function(){
         if(this.y >= 240&&this.timeup===false){
             alert("timeup")
