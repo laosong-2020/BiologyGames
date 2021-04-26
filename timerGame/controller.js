@@ -140,5 +140,6 @@ function compareAns(inputAnswer){
     if(inputAnswer.toLowerCase() === answer.toLowerCase()){
         alert("Indeed, a correct answer");
         getRandomQuestion();
+        resetGameArea();
     }
 }
