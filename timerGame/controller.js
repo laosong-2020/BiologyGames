@@ -4,7 +4,7 @@ var answer;
 function startGame() {
     myGamePiece = new component(30, 30, "red", 80, 75);
     myGameArea.start();
-    setUpBtnListeners();
+    //setUpBtnListeners();
     getRandomQuestion();   
 }
 function getRandomQuestion() {
@@ -18,11 +18,15 @@ function getRandomQuestion() {
     ansLength = getJsonAnswer(jsonItem).length;
     answer = getJsonAnswer(jsonItem);
     document.getElementById('question').innerHTML = getJsonQuestion(jsonItem);
+    /*
     document.getElementById('A').innerHTML = getJsonChoice(jsonItem, 0);
     document.getElementById('B').innerHTML = getJsonChoice(jsonItem, 1);
     document.getElementById('C').innerHTML = getJsonChoice(jsonItem, 2);
     document.getElementById('D').innerHTML = getJsonChoice(jsonItem, 3);
+    */
 }
+
+/*
 function setUpBtnListeners(){
     var anschoices =  $(".options");
     btnlistener(anschoices);
@@ -42,7 +46,7 @@ function btnlistener(choices){
         })
     }
 }
-
+*/
 
 var myGameArea = {
     canvas : document.createElement("canvas"),
@@ -71,7 +75,7 @@ function component(width, height, color, x, y, type) {
     this.xOrigin=x;   
     this.speedX = 0;
     this.speedY = 0;    
-    this.gravity = 0.005;
+    this.gravity = 0.0005;
     this.gravitySpeed = 0;
     this.timeup = false;
     this.update = function() {
@@ -133,7 +137,8 @@ function getJsonChoice(jsonObj, index) {
 }
 
 function compareAns(inputAnswer){
-    if(inputAnswer === answer){
+    if(inputAnswer.toLowerCase() === answer.toLowerCase()){
         alert("Indeed, a correct answer");
+        getRandomQuestion();
     }
 }
