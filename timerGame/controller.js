@@ -142,4 +142,7 @@ function compareAns(inputAnswer){
         getRandomQuestion();
         resetGameArea();
     }
+    else if(inputAnswer.toLowerCase() !== answer.toLowerCase()){
+        alert("Incorrect, answer")
+    }
 }
