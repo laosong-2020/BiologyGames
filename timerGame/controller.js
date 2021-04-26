@@ -29,11 +29,11 @@ function btnlistener(choices){
         choices[i].addEventListener("click",function() {
             console.log("you selected " + this.id);
             var answer = getJsonAnswer(jsonItem);
-            if(this.innerText == answer) { //显示下一个游戏
+            if(this.innerText == answer) { //show next game
                 alert("Correct!");
                 resetGameArea();
                 getRandomQuestion();
-            } else { //结束游戏?
+            } else { //end game?
                 alert("Wrong!");
             }
         })
@@ -68,7 +68,7 @@ function component(width, height, color, x, y, type) {
     this.xOrigin=x;   
     this.speedX = 0;
     this.speedY = 0;    
-    this.gravity = 0.05;
+    this.gravity = 0.005;
     this.gravitySpeed = 0;
     this.timeup = false;
     this.update = function() {
