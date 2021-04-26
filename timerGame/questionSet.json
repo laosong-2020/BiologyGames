@@ -1,18 +1,18 @@
 data = [
 {
-    "question" : "What's your name?", 
-    "answer" : "Trump", 
-    "choices" : ["Obama", "J.Bush", "S.Bush", "Trump"]
+    "question" : "What type of cells have no membrane-bound organelles?", 
+    "answer" : "Prokaryotic cells", 
+    "choices" : ["a", "b", "c", "d"]
 },
 {
-    "question" : "who is the greatest NBA player ever?",
-    "answer" : "Kobe",
-    "choices" : ["Kobe", "M.Jordan", "L.B.J", "D.Rose"]
+    "question" : "What type of cells contain a nucleus and membrane bound organelles?",
+    "answer" : "Eukaryotic cells",
+    "choices" : ["a", "b", "c", "d"]
 }
 ,
 {
-    "question" : "the answer is a",
-    "answer" : "a",
+    "question" : "What type of cells does bacteria belong to?",
+    "answer" : "Prokaryotic cells",
     "choices" : ["a", "b", "c", "d"]
 }
 ];
