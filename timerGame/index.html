@@ -19,6 +19,8 @@ canvas {
 <p>The red square will stop falling when it hits the floor.</p>
 <h1>Example Q&A</h1>
 <div id = "question"></div>
+
+
 <table>
     <tr>
         <td> <button type="button" id="A" class="options ansbtn btn btn-primary">A</button> </td>
@@ -30,6 +32,7 @@ canvas {
     </tr>
 
 </table>
+
 
 <!--
 <div id = "A" class="options"></div>
@@ -57,7 +60,9 @@ canvas {
      });
 
     $(".charbox").on("input",function(){
-        console.log(this.value);
+        if(this.value.length == ansLength){
+            compareAns(this.value);
+        }        
     });
 
 </script>

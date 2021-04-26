@@ -1,5 +1,6 @@
 var usedQuestions = []; //use to store the questions that is already used
-
+var ansLength;
+var answer;
 function startGame() {
     myGamePiece = new component(30, 30, "red", 80, 75);
     myGameArea.start();
@@ -14,6 +15,8 @@ function getRandomQuestion() {
     while(usedQuestions.includes(randomIndex)){ //find another random index
         randomIndex = Math.floor(Math.random() * size );
     }
+    ansLength = getJsonAnswer(jsonItem).length;
+    answer = getJsonAnswer(jsonItem);
     document.getElementById('question').innerHTML = getJsonQuestion(jsonItem);
     document.getElementById('A').innerHTML = getJsonChoice(jsonItem, 0);
     document.getElementById('B').innerHTML = getJsonChoice(jsonItem, 1);
@@ -129,4 +132,8 @@ function getJsonChoice(jsonObj, index) {
     return choice;
 }
 
-
+function compareAns(inputAnswer){
+    if(inputAnswer === answer){
+        alert("Indeed, a correct answer");
+    }
+}
