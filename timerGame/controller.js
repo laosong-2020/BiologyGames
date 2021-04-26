@@ -6,6 +6,7 @@ function startGame() {
     myGameArea.start();
     //setUpBtnListeners();
     getRandomQuestion();   
+    changeDiff();
 }
 function getRandomQuestion() {
     var size = data.length;
@@ -75,7 +76,7 @@ function component(width, height, color, x, y, type) {
     this.xOrigin=x;   
     this.speedX = 0;
     this.speedY = 0;    
-    this.gravity = 0.0005;
+    this.gravity = 0.0025;
     this.gravitySpeed = 0;
     this.timeup = false;
     this.update = function() {
@@ -144,5 +145,20 @@ function compareAns(inputAnswer){
     }
     else if(inputAnswer.toLowerCase() !== answer.toLowerCase()){
         alert("Incorrect, answer")
+        resetGameArea();
     }
+}
+
+function changeDiff(){
+    $("#increase-diff").on("click",function(){
+        myGamePiece.gravity += 0.0005;
+        console.log(myGamePiece.gravity);
+    })
+
+
+
+    $("#decrease-diff").on("click",function(){
+        myGamePiece.gravity -= 0.0005;
+        console.log(myGamePiece.gravity);
+    })
 }
