@@ -1,39 +1,38 @@
 data = [
-{
-    "question" : "What type of cells have no membrane-bound organelles?", 
-    "answer" : "Prokaryotic cells"
-},
-{
-    "question" : "What type of cells contain a nucleus and membrane bound organelles?",
-    "answer" : "Eukaryotic cells"
-}
-,
-{
-    "question" : "What type of cells does bacteria belong to?",
-    "answer" : "Prokaryotic cells"
-},
-{
-    "question" : "Which part of the cell regulates interactions between the cell and the environment?", 
-    "answer" : "Plasma membrane"
-},
-{
-    "question" : "What is plasma membrane made of?", 
-    "answer" : "Phospholipid bilayer"
-},
-{
-    "question" : "What holds the cell's genetic material(DNA)?", 
-    "answer" : "Cell nucleus"
-},
-{
-    "question" : "What is the energy producing organelle in plant cells?", 
-    "answer" : "Chloroplast"
-},
-{
-    "question" : "What part of the cell is similar to the digestive system and breaks down nutrients to produce energy?", 
-    "answer" : "Mitochondria"
-},
-{
-    "question" : "What part of the cell stores waste and removes waste?", 
-    "answer" : "Lysosome"
-}
-];
+    {
+        "question" : "What is the logical problem-solving approach used by scientists?", 
+        "answer" : "Scientific method"
+    },
+    {
+        "question" : "The first step in a scientific investigation is to clearly define the _______.",
+        "answer" : "question"
+    },
+    {
+        "question" : "What is a possible explanation based knowledge, observations, and background research?",
+        "answer" : "Hypothesis"
+    },
+    {
+        "question" : "What are medical or health-related research studies done in human beings?", 
+        "answer" : "Clinical trials"
+    },
+    {
+        "question" : "________ trials test new treatments, new combinations of drugs, or new approaches to surgery or radiation. ", 
+        "answer" : "Treatment"
+    },
+    {
+        "question" : "________ trials are researches conducted on new drugs, medical devices or procedures.", 
+        "answer" : "Preclinical"
+    },
+    {
+        "question" : "_________ trials are trials in which the patients do not know if they are receiving treatments or placebos.", 
+        "answer" : "Blind"
+    },
+    {
+        "question" : "__________ is the process by which patients are assigned a group of the clinical trial.", 
+        "answer" : "Randomization"
+    },
+    {
+        "question" : "How many phases are there in clinical trials?", 
+        "answer" : "Four"
+    }
+]
