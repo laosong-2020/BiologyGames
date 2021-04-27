@@ -1,39 +1,38 @@
 data = [
-{
-    "question" : "The things that change in an experiment, observations, or research are called _________.", 
-    "answer" : "variables"
-},
-{
-    "question" : "What are the things that respond to the change made to the independent variables?",
-    "answer" : "Dependent variables"
-}
-,
-{
-    "question" : "What are the factors that remain constant?",
-    "answer" : "Controlled variables"
-},
-{
-    "question" : "What is the average of a set of numbers?", 
-    "answer" : "Mean"
-},
-{
-    "question" : "What is the middle value between the smallest and largest of a set of numbers?", 
-    "answer" : "Median"
-},
-{
-    "question" : "What is the number that appears most often in a data set?", 
-    "answer" : "Mode"
-},
-{
-    "question" : "What is the difference between the largest and smallest numbers in a set of numbers?", 
-    "answer" : "Range"
-},
-{
-    "question" : "What is an infectious particle that reproduces by “hijacking” a host cell?", 
-    "answer" : "Virus"
-},
-{
-    "question" : "What is the occurrence in a community or region of cases of an illness clearly in excess of normal expectancy?", 
-    "answer" : "Epidemic"
-}
-];
+    {
+        "question" : "What is the logical problem-solving approach used by scientists?", 
+        "answer" : "Scientific method"
+    },
+    {
+        "question" : "The first step in a scientific investigation is to clearly define the _______.",
+        "answer" : "question"
+    },
+    {
+        "question" : "What is a possible explanation based knowledge, observations, and background research?",
+        "answer" : "Hypothesis"
+    },
+    {
+        "question" : "What are medical or health-related research studies done in human beings?", 
+        "answer" : "Clinical trials"
+    },
+    {
+        "question" : "________ trials test new treatments, new combinations of drugs, or new approaches to surgery or radiation. ", 
+        "answer" : "Treatment"
+    },
+    {
+        "question" : "________ trials are researches conducted on new drugs, medical devices or procedures.", 
+        "answer" : "Preclinical"
+    },
+    {
+        "question" : "_________ trials are trials in which the patients do not know if they are receiving treatments or placebos.", 
+        "answer" : "Blind"
+    },
+    {
+        "question" : "__________ is the process by which patients are assigned a group of the clinical trial.", 
+        "answer" : "Randomization"
+    },
+    {
+        "question" : "How many phases are there in clinical trials?", 
+        "answer" : "Four"
+    }
+]

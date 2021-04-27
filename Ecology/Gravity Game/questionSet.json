@@ -1,39 +1,38 @@
 data = [
-{
-    "question" : "______ is a branch of biology that studies the relationship and interactions between organisms and their environment.", 
-    "answer" : "Ecology"
-},
-{
-    "question" : "_______ are all the living or once living parts of the environment.",
-    "answer" : "Biotic factors"
-}
-,
-{
-    "question" : "_______ are the non-living parts of the environment.",
-    "answer" : "Abiotic factors"
-},
-{
-    "question" : "A(n) ______ is any living thing - a plant, an animal, a bacteria, etc.", 
-    "answer" : "Organism"
-},
-{
-    "question" : "What are the organisms that use the sun’s energy to make their own food through the process of photosynthesis?", 
-    "answer" : "Producers"
-},
-{
-    "question" : "What are the animals that only eat other animals?", 
-    "answer" : "Carnivores"
-},
-{
-    "question" : "Large geographic areas with similar ecosystems and climate are called _____.", 
-    "answer" : "biomes"
-},
-{
-    "question" : "________ refers to the normal, gradual changes that occur in ecosystems over time.", 
-    "answer" : "Succession"
-},
-{
-    "question" : "What obtains energy by consuming wastes and dead organisms?", 
-    "answer" : "Decomposers"
-}
-];
+    {
+        "question" : "What is the logical problem-solving approach used by scientists?", 
+        "answer" : "Scientific method"
+    },
+    {
+        "question" : "The first step in a scientific investigation is to clearly define the _______.",
+        "answer" : "question"
+    },
+    {
+        "question" : "What is a possible explanation based knowledge, observations, and background research?",
+        "answer" : "Hypothesis"
+    },
+    {
+        "question" : "What are medical or health-related research studies done in human beings?", 
+        "answer" : "Clinical trials"
+    },
+    {
+        "question" : "________ trials test new treatments, new combinations of drugs, or new approaches to surgery or radiation. ", 
+        "answer" : "Treatment"
+    },
+    {
+        "question" : "________ trials are researches conducted on new drugs, medical devices or procedures.", 
+        "answer" : "Preclinical"
+    },
+    {
+        "question" : "_________ trials are trials in which the patients do not know if they are receiving treatments or placebos.", 
+        "answer" : "Blind"
+    },
+    {
+        "question" : "__________ is the process by which patients are assigned a group of the clinical trial.", 
+        "answer" : "Randomization"
+    },
+    {
+        "question" : "How many phases are there in clinical trials?", 
+        "answer" : "Four"
+    }
+]

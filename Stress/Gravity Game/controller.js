@@ -1,3 +1,4 @@
+var difficultyLevel = [0.0001, 0.0005, 0.001];
 var questions = [];
 var questionIdx = 0;
 var imgWidth = "170px";
@@ -13,6 +14,32 @@ var gravity = 0;
 
 function setGravity(val) {
   gravity = val;
+}
+
+function setEasyMode() {
+  setGravity(difficultyLevel[0]);
+}
+
+function setMediumMode() {
+  setGravity(difficultyLevel[1]);
+}
+
+function setHardMode() {
+  setGravity(difficultyLevel[2]);
+}
+
+function hideSubmissionButton() {
+  var submissionButton = document.getElementById("submission");
+  if (submissionButton) {
+    submissionButton.style.visibility = "hidden";
+  }
+}
+
+function showSubmissionButton() {
+  var submissionButton = document.getElementById("submission");
+  if (submissionButton) {
+    submissionButton.style.visibility = "visible";
+  }
 }
 
 /* Entry point of the js upon DOM loading */
@@ -77,7 +104,7 @@ function component(width, height, color, x, y, type) {
             alert("timeup")
             this.timeup=true;
             // handleQuizStatus();
-
+            hideSubmissionButton();
             addNextButton(noOfQuestions, questions);
             handleQuizStatus();
             // resetGameArea();
@@ -126,33 +153,31 @@ function handleQuizStatus() {
   );
 }
 
-function handleSubmission() {
-  var x = document.getElementById("submission").value;
-  alert("your answer: " + x);
-  compareAns(x);
-}
 //display the question
 function displayQuestion() {
+  showSubmissionButton();
   chances = 0;
   noOfQuestions = questions.length;
   handleQuizStatus();
   $(stage).append(
-    '<div  class="question" id ="questionText">' +
+    '<div class="question" id ="questionText">' +
       questions[questionNumber].question +
-      '</div>' + '<div id = "wordbox">' + 
-      '<input class="charbox" id="submission" type="text" maxlength="30"  placeholder="" >' + 
-      '<button type="button" class="options">Submit</button>' + 
+      '</div>' + '<div class = "wordbox">' + 
+      '<input class="charbox" id="answer" type="text" height="20" width="80" maxlength="30"  placeholder="Your Answer" >' + 
+      '<button type="button" id="submission" class="options">Submit</button>' + 
       '</div>'
   );
+
   $(stage).append('<div id="feedback"></div>');
   $(stage).append('<div id="goToNextQuestion"></div>');
 
   $(".options").click(function () {
-    var x = document.getElementById("submission").value;
+    var x = document.getElementById("answer").value;
     if (true) {
       //correct answer
       if (x.toLowerCase() == questions[questionNumber].answer.toLowerCase()) {
         score++;
+        hideSubmissionButton();
         
         // $("#" + this.id + ".options").addClass("right");
         //alert("Correct answer, you earned 1 point.")
