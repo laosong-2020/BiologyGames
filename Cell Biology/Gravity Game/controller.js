@@ -163,9 +163,9 @@ function displayQuestion() {
     '<div class="question" id ="questionText">' +
       questions[questionNumber].question +
       '</div>' + '<div class = "wordbox">' + 
-      '<input class="charbox" id="answer" type="text" height="20" width="80" maxlength="30"  placeholder="Your Answer" >' + 
-      '<button type="button" id="submission" class="options">Submit</button>' + 
-      '</div>'
+      '<div> <input class="charbox" id="answer" type="text" height="20" width="80" maxlength="30"  placeholder="Your Answer" >' + 
+      '<button type="button" id="submission" height="20" class="options">Submit</button>' + 
+      '</div></div>'
   );
 
   $(stage).append('<div id="feedback"></div>');
