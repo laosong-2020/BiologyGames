@@ -1,8 +1,8 @@
 
 // #####################################################################
 // set your questions and the images (including extension) here
-// Options format: [{name: "Answer key to be displayed without any spaces", image: "Corresponding image name including extension (.jpg, .png etc)"]
-// Only 3 options are allowed.
+// Options format: [{name: "Answer key to be displayed (replace space with '_')", image: "Corresponding image name including extension (.jpg, .png etc)"]
+// Only 3 options are allowed.'
 // Any number of questions can be added.
 // answer format: Same as name in one of the options.
 
@@ -10,21 +10,20 @@
 var quizQuestions = [
   {
     question: "Which of these represent scientific method?",
-		options: [{name:"data_analysis", image:"data_analysis.PNG"}, {name:"scientific_method", image:"scientific_method.PNG"},{name:"scientist_chatting", image:"scientist_chatting.PNG"}],
+    options: [{name:"data_analysis", image:"data_analysis.PNG"}, {name:"scientific_method", image:"scientific_method.PNG"},{name:"scientist_chatting", image:"scientist_chatting.PNG"}],
     answer: "scientific_method",
   },
   {
     question: "Which of these represent Observation?",
-		options: [{name:"data_analysis", image:"data_analysis.PNG"}, {name:"questions_from_hypothesis", image:"questions_from_hypothesis.PNG"},{name:"observation", image:"observation.PNG"}],
+    options: [{name:"data_analysis", image:"data_analysis.PNG"}, {name:"questions_from_hypothesis", image:"questions_from_hypothesis.PNG"},{name:"observation", image:"observation.PNG"}],
     answer: "observation",
   },
   {
     question: "Which of these represent experimentation?",
-		options: [{name:"experimentation", image:"experimentation.PNG"}, {name:"research", image:"research.PNG"},{name:"data_analysis", image:"data_analysis.PNG"}],
+    options: [{name:"experimentation", image:"experimentation.PNG"}, {name:"research", image:"research.PNG"},{name:"data_analysis", image:"data_analysis.PNG"}],
     answer: "experimentation",
   },
 ];
-
 // #####################################################################
 var imgWidth = "170px";
 var imgHeight = "170px";
@@ -129,21 +128,20 @@ function displayQuestion(questionBank) {
 
 /* adds the button moving to the next question */
 function addNextButton(noOfQuestions, questionBank) {
-	if (questionNumber == questionBank.length - 1){
-		$("#goToNextQuestion").html(
-		  '<button type="button" id="next"> Finish Quiz >></button>'
-		);
-	}else{
-		$("#goToNextQuestion").html(
-		  '<button type="button" id="next">Next Question >></button>'
-		);
-	}
+  if (questionNumber == questionBank.length - 1){
+    $("#goToNextQuestion").html(
+      '<button type="button" id="next"> Finish Quiz >></button>'
+    );
+  }else{
+    $("#goToNextQuestion").html(
+      '<button type="button" id="next">Next Question >></button>'
+    );
+  }
 
   $("#next").click(function () {
     changeQuestion(noOfQuestions, questionBank);
   });
 }
-
 
 /* In charge of transition to the next question */
 function changeQuestion(noOfQuestions, questionBank) {

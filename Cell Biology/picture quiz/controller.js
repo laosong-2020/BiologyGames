@@ -24,8 +24,6 @@ var quizQuestions = [
     answer: "mitochondrion",
   },
 ];
-
-
 // #####################################################################
 var imgWidth = "170px";
 var imgHeight = "170px";
